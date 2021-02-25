@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+body {
+  --bg: #eeece7;
+  --tc: #161311;
+  --serif: "Noto Serif", serif;
+  --sans: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.logo {
+  width: 60px;
+  margin: 0 auto;
+  height: 60px;
+  background-color: var(--tc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo__text {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--bg);
+}
+
+.content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.content .column {
+  width: 100%;
+  height: auto;
+}
+.content .column--left .heading {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+.content .column--left .subheading {
+  font-weight: 400;
+  line-height: 2;
+}
+.content .column--left .button {
+  padding: 0.85rem 2.5em;
+  font-weight: 700;
+  background: var(--tc);
+  color: var(--bg);
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem 0 4rem;
+}
+.content .column--left .button::after, .content .column--left .button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--tc);
+}
+.content .column--left .button::after {
+  width: 95%;
+  height: 2px;
+  transform: translate(4px, 6px);
+}
+.content .column--left .button::before {
+  width: 2px;
+  height: 95%;
+  transform: translate(6px, 6px);
+}
+.content .column--left .benefits {
+  margin-bottom: 3rem;
+}
+.content .column--left .benefits__heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.content .column--left .benefits .offer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.content .column--left .benefits .offer + .offer {
+  margin-top: 2rem;
+}
+.content .column--left .benefits .offer__icon {
+  margin: 0 auto;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  position: relative;
+}
+.content .column--left .benefits .offer__icon::after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  border: 2px solid var(--tc);
+}
+.content .column--left .benefits .offer__subheading {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.content .column--right .grid {
+  display: flex;
+  flex-direction: column;
+}
+.content .column--right .grid .image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  display: flex;
+  z-index: 1;
+}
+.content .column--right .grid .image::after {
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+.content .column--right .grid .image + .image {
+  margin-top: 1rem;
+}
+.content .column--right .grid .image__overlay {
+  margin-top: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4rem;
+  position: relative;
+  color: var(--bg);
+}
+.content .column--right .grid .image__number {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.content .column--right .grid .image__place {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.content .column--right .grid .image__distance {
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=main.css.map */
