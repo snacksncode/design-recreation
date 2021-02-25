@@ -24,7 +24,7 @@ body {
 
 .container {
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .logo {
@@ -51,6 +51,9 @@ body {
 .content .column {
   width: 100%;
   height: auto;
+}
+.content .column--left {
+  text-align: center;
 }
 .content .column--left .heading {
   font-family: var(--serif);

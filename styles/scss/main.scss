@@ -4,7 +4,7 @@
 
 .container {
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .logo {
@@ -31,6 +31,7 @@
     width: 100%;
     height: auto;
     &--left {
+      text-align: center;
       .heading {
         font-family: var(--serif);
         font-size: 2.5rem;
