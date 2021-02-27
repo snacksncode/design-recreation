@@ -1,0 +1,90 @@
+@media (min-width: 1200px) {
+  body {
+    display: flex;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 1270px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .content {
+    flex-direction: row;
+    margin-top: 0;
+  }
+  .logo {
+    position: absolute;
+    top: 4rem;
+  }
+  .column {
+    &--left {
+      width: 50%;
+      margin-top: 8rem;
+      padding-right: 4rem;
+      text-align: left;
+      .heading {
+        font-size: 3rem;
+      }
+      .button {
+        margin-bottom: 6rem;
+      }
+      .benefits {
+        margin-bottom: 0;
+        &__heading {
+          text-align: left;
+          font-size: 1rem;
+          margin-bottom: 2rem;
+        }
+        .offer {
+          align-items: center;
+          text-align: left;
+          flex-direction: row;
+          &__content {
+            margin-left: 2rem;
+          }
+          &__icon {
+            margin: auto 0;
+            font-size: 1.25rem;
+            width: 60px;
+            height: 60px;
+          }
+          &__heading {
+            margin: 0;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+          }
+          &__subheading {
+            max-width: unset;
+            font-size: 0.9rem;
+            opacity: 0.65;
+          }
+        }
+      }
+    }
+    &--right {
+      width: 50%;
+      display: flex;
+      .grid {
+        height: 100%;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 60% 60%;
+        grid-template-rows: 1fr;
+        grid-gap: 3rem;
+        gap: 3rem;
+        .image {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          &__overlay {
+            width: 100%;
+          }
+          & + .image {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
