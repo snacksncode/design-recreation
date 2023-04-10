@@ -1,12 +1,14 @@
-import Image from "next/image";
+import { Hero } from "@/components/Hero";
 import styles from "./page.module.css";
-import { Logo } from "@/components/Logo";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1>Let&apos;s start</h1>
-      <Logo />
-    </main>
+    <>
+      <Navbar />
+      <main className={styles.main}>
+        <Hero />
+      </main>
+    </>
   );
 }
