@@ -1,7 +1,7 @@
 :root {
-  --clr-accent: hsl(260, 88%, 62%);
+  --clr-accent: hsl(236, 79%, 68%);
   --white: hsl(0, 0%, 100%);
-  --off-white: hsl(100, 50%, 98%);
+  --off-white: hsl(84, 45%, 98%);
   --text-primary: hsl(0, 0%, 20%);
   --text-secondary: hsl(0, 0%, 30%);
   --text-muted: hsl(235, 9%, 75%);
@@ -30,4 +30,13 @@ a {
 *:focus-visible {
   outline: 3px dashed var(--white);
   outline-offset: 0.5rem;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }

@@ -1,0 +1,120 @@
+.wrapper {
+  padding-top: 4rem;
+  margin-bottom: 4rem;
+  background-color: var(--off-white);
+  position: relative;
+
+  &::before {
+    --size: 200px;
+
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: calc(-1 * var(--size) + 5px);
+    left: -100vw;
+    width: 200vw;
+    height: var(--size);
+    background-image: linear-gradient(to top, var(--off-white) 20%, transparent);
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: var(--clr-accent);
+  }
+}
+
+.subtitle {
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-muted);
+    opacity: 0.5;
+  }
+}
+
+.action {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  .icon {
+    align-self: center;
+    display: flex;
+    color: var(--clr-accent);
+  }
+
+  .text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .card {
+    box-shadow: 0 0 15px hsla(0 0% 0% / 0.1);
+
+    .image {
+      display: block;
+    }
+
+    .content {
+      padding: 1.5rem;
+      background-color: var(--white);
+      display: flex;
+      flex-direction: column;
+
+      .caption {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-muted);
+        position: relative;
+        margin-bottom: 1.25rem;
+        align-self: flex-start;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -0.75rem;
+          left: 0;
+          width: 110px;
+          height: 1px;
+          background-color: currentColor;
+          opacity: 0.5;
+        }
+      }
+
+      .text {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
