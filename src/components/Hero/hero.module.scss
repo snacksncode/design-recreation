@@ -1,8 +1,6 @@
 .wrapper {
   position: relative;
-  min-height: 100vh;
   width: 100%;
-  isolation: isolate;
   padding-top: calc(var(--navbar-height) + 2.5rem);
   color: var(--white);
   padding-inline: var(--padding-gutter);
@@ -11,7 +9,7 @@
 }
 
 .image {
-  z-index: -1;
+  z-index: -2;
   object-fit: cover;
   filter: brightness(80%);
 }
