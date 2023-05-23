@@ -1,5 +1,8 @@
 .main {
+  width: 100%;
   max-width: 1200px;
-  padding-inline: var(--padding-gutter);
   margin-inline: auto;
+  &.gutters {
+    padding-inline: var(--padding-gutter);
+  }
 }

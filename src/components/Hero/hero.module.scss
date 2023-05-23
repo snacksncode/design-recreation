@@ -3,7 +3,11 @@
   width: 100%;
   padding-top: calc(var(--navbar-height) + 2.5rem);
   color: var(--white);
-  padding-inline: var(--padding-gutter);
+  display: flex;
+  flex-direction: column;
+}
+
+.content_wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -49,9 +53,16 @@
   }
 }
 
-.heading {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+.heading__wrapper {
+  .heading {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .slides {
+    display: none;
+  }
 }
 
 .subheading {
@@ -59,6 +70,10 @@
   font-weight: 700;
   line-height: 1.7;
   margin-bottom: 1rem;
+
+  .space {
+    display: none;
+  }
 }
 
 .info {
@@ -92,14 +107,15 @@
   font-size: 0.9rem;
   font-weight: 700;
   align-items: stretch;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
   .text {
     display: flex;
     align-items: center;
     padding: 0.5rem 1.75rem;
-    backdrop-filter: blur(25px);
-    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.25);
   }
 
   .icon {
@@ -108,6 +124,7 @@
     background-color: var(--white);
     color: var(--clr-accent);
     padding: 0.75rem;
+    isolation: isolate;
 
     svg {
       width: 20px;
@@ -117,30 +134,46 @@
 }
 
 .showcase {
-  display: flex;
-  background-color: var(--white);
-  padding: 2rem 1.5rem;
   margin-top: 5rem;
-  justify-content: space-between;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 
-  & > .column {
-    .label {
-      font-size: 0.75rem;
-      margin-bottom: 0.35rem;
-      color: var(--text-muted);
-    }
-    .select {
-      color: var(--text-primary);
-      font-weight: 700;
+  &__icon {
+    display: none;
+  }
+
+  &__airports {
+    display: flex;
+    flex: 1;
+    padding: 2rem 1.5rem;
+    background-color: var(--white);
+
+    .showcase__row {
+      flex: 1;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1rem;
+      gap: 1rem;
 
-      svg {
-        width: 0.75rem;
-        height: 0.75rem;
+      .column {
+        .label {
+          font-size: 0.75rem;
+          margin-bottom: 0.35rem;
+          color: var(--text-muted);
+        }
+        .select {
+          color: var(--text-primary);
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1rem;
+
+          svg {
+            width: 0.75rem;
+            height: 0.75rem;
+          }
+        }
       }
     }
   }
@@ -153,5 +186,199 @@
     padding: 1rem;
     font-weight: 700;
     margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding-top: calc(var(--navbar-height) + 8rem);
+  }
+
+  .image {
+    object-position: center 30%;
+    filter: brightness(90%);
+  }
+
+  .heading__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .heading {
+      font-size: 7.5rem;
+    }
+
+    .slides {
+      display: flex;
+      z-index: 2;
+      gap: 0.25rem;
+
+      .slide {
+        position: relative;
+        cursor: pointer;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: -2px;
+        background-color: rgba(255, 255, 255, 0.15);
+        padding-block: 1rem;
+        width: 50px;
+        border-top: 2px solid rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+
+        .number {
+          color: rgba(0, 0, 0, 0.1);
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin-block: 1.5rem;
+        }
+
+        .indicator {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &.active {
+          background-color: rgba(255, 255, 255, 0.45);
+          border-top: 2px solid #acb4e6;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 60%;
+            height: 2px;
+            background-color: var(--clr-accent);
+          }
+
+          .number {
+            color: var(--text-primary);
+          }
+
+          .indicator {
+            background-color: var(--clr-accent);
+            box-shadow: 0 3px 5px var(--clr-accent);
+          }
+        }
+      }
+    }
+  }
+
+  .subheading {
+    font-size: 2rem;
+
+    br {
+      display: none;
+    }
+
+    .space {
+      display: inline;
+    }
+
+    .rupee {
+      margin-right: -2px;
+    }
+  }
+
+  .caption {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+
+    .text {
+      font-weight: 700;
+      &::before {
+        bottom: -1rem;
+      }
+    }
+
+    &::before {
+      width: 100%;
+      bottom: -1rem;
+    }
+  }
+
+  .info {
+    font-size: 1.35rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    padding-block: 0.25rem;
+  }
+
+  .action {
+    font-size: 1.25rem;
+
+    .text {
+      padding: 1.25rem 2.75rem;
+    }
+
+    .icon {
+      padding: 1.25rem;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .showcase {
+    margin-top: 12rem;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10rem;
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
+
+    &__icon {
+      display: block;
+      width: 125px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.35);
+      color: var(--text-muted);
+
+      svg {
+        width: 45px;
+        height: 45px;
+        transform: rotate(45deg);
+      }
+    }
+
+    &__airports {
+      justify-content: center;
+      .showcase__row {
+        max-width: 500px;
+        .column {
+          .label {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+          }
+          .select {
+            font-size: 1.125rem;
+            width: 175px;
+            justify-content: space-between;
+
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+
+              path {
+                stroke-width: 2;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__action {
+      padding: 3rem 6rem;
+      font-size: 1.5rem;
+      margin: 0;
+    }
   }
 }
