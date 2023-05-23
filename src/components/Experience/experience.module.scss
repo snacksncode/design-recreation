@@ -117,3 +117,14 @@
     }
   }
 }
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding-top: 0;
+
+    &::before {
+      --size: 600px;
+      background-image: linear-gradient(to top, var(--off-white) 10%, transparent);
+    }
+  }
+}
