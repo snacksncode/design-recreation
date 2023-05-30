@@ -5,6 +5,7 @@ import man from "@/public/happy-boy.jpg";
 import smile from "@/public/ris-failed-me.jpeg";
 import vr from "@/public/he-do-be-gaming.jpg";
 import Image, { StaticImageData } from "next/image";
+import { Cube } from "@/components/svg/Cube";
 
 type ExperienceCard = {
   caption: string;
@@ -21,22 +22,38 @@ const cards: ExperienceCard[] = [
 export const Experience = () => {
   return (
     <Container className={styles.wrapper}>
-      <h2 className={styles.title}>The Zabdos Experience</h2>
-      <p className={styles.subtitle}>
-        Whether it&apos;s your first flight or simply your latest, we work to anticipate your every need
-      </p>
-      <div className={styles.action}>
-        <div className={styles.icon}>
-          <PlayCircle />
+      <div className={styles.text}>
+        <h2 className={styles.title}>
+          The
+          <br /> Zabdos
+          <br /> Experience
+        </h2>
+        <p className={styles.subtitle}>
+          Whether it&apos;s your first flight or
+          <br /> simply your latest, we work to
+          <br /> anticipate your every need
+        </p>
+        <div className={styles.action}>
+          <div className={styles.icon}>
+            <PlayCircle />
+          </div>
+          <span className={styles.text}>Watch the full video now!</span>
         </div>
-        <span className={styles.text}>Watch the full video now!</span>
       </div>
       <div className={styles.cards}>
-        {cards.map(({ caption, text, image }) => {
+        {cards.map(({ caption, text, image }, index) => {
           const key = `${caption}_${text}`;
           return (
             <div key={key} className={styles.card}>
-              <Image className={styles.image} placeholder="blur" src={image} sizes="100vw" alt="" />
+              <div className={styles.image__container}>
+                {index === cards.length - 1 && (
+                  <div className={styles.image__text}>
+                    <Cube />
+                    Explore the Zabdos A380 or Boeing 777 using our 3D experience.
+                  </div>
+                )}
+                <Image className={styles.image} placeholder="blur" src={image} sizes="100vw" alt="" />
+              </div>
               <div className={styles.content}>
                 <p className={styles.caption}>{caption}</p>
                 <h3 className={styles.text}>{text}</h3>
