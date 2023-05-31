@@ -7,6 +7,7 @@ import { Coffee } from "@/components/svg/Coffee";
 import { KitchenTools } from "@/components/svg/KitchenTools";
 import { Bolt } from "@/components/svg/Bolt";
 import { Car } from "@/components/svg/Car";
+import classNames from "classnames";
 
 type Service = {
   caption: string;
@@ -32,10 +33,14 @@ export const Journey = () => {
         Explore the additional services we offer to make your journey even more memorable
       </p>
       <div className={styles.services}>
-        {services.map(({ id, caption, icon }) => {
+        {services.map(({ id, caption, icon }, index) => {
+          const classes = classNames(styles.service, { [styles.active]: index === 0 });
           return (
-            <div key={id} className={styles.service}>
-              <div className={styles.icon}>{icon}</div>
+            <div key={id} className={classes}>
+              <div className={styles.icon}>
+                <div className={styles.ripples} />
+                {icon}
+              </div>
               <p className={styles.caption}>{caption}</p>
             </div>
           );
