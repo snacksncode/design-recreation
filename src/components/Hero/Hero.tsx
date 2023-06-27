@@ -12,25 +12,25 @@ export const Hero = () => {
   return (
     <div className={styles.wrapper}>
       <Image src={heroImageData} sizes="100vw" priority fill alt="Tropical background image" className={styles.image} />
-      <Container className={styles.content_wrapper}>
+      <Container className={styles["content-wrapper"]}>
         <div className={styles.caption}>
           <span className={styles.text}>Fly with us to</span>
         </div>
-        <div className={styles.heading__wrapper}>
+        <div className={styles["heading-wrapper"]}>
           <h1 className={styles.heading}>Bangkok</h1>
           <div className={styles.slides}>
-            <div className={classNames(styles.slide, styles.active)}>
+            <button className={classNames(styles.slide, styles.active)}>
               <div className={styles.number}>01</div>
               <div className={styles.indicator}></div>
-            </div>
-            <div className={styles.slide}>
+            </button>
+            <button className={styles.slide}>
               <div className={styles.number}>02</div>
               <div className={styles.indicator}></div>
-            </div>
-            <div className={styles.slide}>
+            </button>
+            <button className={styles.slide}>
               <div className={styles.number}>03</div>
               <div className={styles.indicator}></div>
-            </div>
+            </button>
           </div>
         </div>
         <p className={styles.subheading}>
@@ -55,7 +55,7 @@ export const Hero = () => {
             <Airplane />
           </div>
           <div className={styles.showcase__airports}>
-            <div className={styles.showcase__row}>
+            <div className={styles["showcase-row"]}>
               <div className={styles.column}>
                 <div className={styles.label}>Departure airport</div>
                 <div className={styles.select}>

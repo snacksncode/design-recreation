@@ -45,9 +45,9 @@ export const Experience = () => {
           const key = `${caption}_${text}`;
           return (
             <div key={key} className={styles.card}>
-              <div className={styles.image__container}>
+              <div className={styles["image-container"]}>
                 {index === cards.length - 1 && (
-                  <div className={styles.image__text}>
+                  <div className={styles["image-text"]}>
                     <Cube />
                     Explore the Zabdos A380 or Boeing 777 using our 3D experience.
                   </div>

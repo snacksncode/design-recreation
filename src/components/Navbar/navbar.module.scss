@@ -1,17 +1,18 @@
 .wrapper {
-  position: absolute;
-  width: 100%;
+  color: var(--white);
   display: flex;
+  height: var(--navbar-height);
   justify-content: space-between;
   padding: var(--padding-gutter);
+  position: absolute;
+  width: 100%;
   z-index: 2;
-  height: var(--navbar-height);
-  color: var(--white);
 }
 
 .logo {
-  padding-block: 5px;
   display: flex;
+  padding-block: 5px;
+
   svg {
     height: 100%;
     width: auto;
@@ -20,35 +21,35 @@
 
 .nav {
   .hamburger {
-    width: 44px;
-    height: 44px;
-    padding: 10px 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     background-color: transparent;
     border: none;
+    display: flex;
+    flex-direction: column;
+    height: 44px;
+    justify-content: space-between;
+    padding: 10px 5px;
+    width: 44px;
 
     .line {
-      width: 100%;
-      height: 3px;
-      border-radius: 3px;
       background-color: var(--white);
+      border-radius: 3px;
+      height: 3px;
+      width: 100%;
     }
   }
 
   .status,
-  .check_in,
+  .check-in,
   .avatar {
     display: none;
   }
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .wrapper {
+    left: 50%;
     margin-top: 1rem;
     max-width: 1300px;
-    left: 50%;
     transform: translateX(-50%);
   }
 
@@ -57,54 +58,52 @@
   }
 
   .nav {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 2rem;
 
     .status,
-    .check_in,
+    .check-in,
     .avatar {
-      display: block;
       cursor: pointer;
+      display: block;
     }
 
     .avatar {
+      backdrop-filter: blur(10px);
+      background-color: rgb(0 0 0 / 20%);
       border: none;
       border-radius: 50%;
+      height: 44px;
       overflow: hidden;
       padding: 2px;
       width: 44px;
-      height: 44px;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
 
       img {
-        display: block;
         border-radius: inherit;
+        display: block;
       }
     }
 
-    .check_in {
-      padding: 0.5rem 2rem;
-      background-color: transparent;
+    .check-in {
+      background-color: var(--white);
       border: none;
       border-radius: 4px;
-      background-color: var(--white);
+      box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
       color: var(--text-primary);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      padding: 0.5rem 2rem;
     }
 
     .status {
-      padding: 0.35rem;
       background-color: transparent;
       border: none;
       color: var(--white);
+      padding: 0.35rem;
     }
 
-    .check_in,
+    .check-in,
     .status {
       font-weight: 700;
-      font-weight: 1.125rem;
     }
   }
 }

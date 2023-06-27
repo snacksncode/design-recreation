@@ -12,7 +12,7 @@ export const Navbar = () => {
       </Link>
       <div className={styles.nav}>
         <button className={styles.status}>Flight Status</button>
-        <button className={styles.check_in}>Check In</button>
+        <button className={styles["check-in"]}>Check In</button>
         <button className={styles.avatar}>
           <Image src={avatar} alt="Avatar" />
         </button>

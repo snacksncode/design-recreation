@@ -1,25 +1,18 @@
 :root {
-  --clr-accent: hsl(236, 79%, 68%);
-  --white: hsl(0, 0%, 100%);
-  --off-white: hsl(84, 45%, 98%);
-  --text-primary: hsl(0, 0%, 20%);
-  --text-secondary: hsl(0, 0%, 30%);
-  --text-muted: hsl(235, 9%, 75%);
-
+  --clr-accent: hsl(236deg 79% 68%);
+  --white: hsl(0deg 0% 100%);
+  --off-white: hsl(84deg 45% 98%);
+  --text-primary: hsl(0deg 0% 20%);
+  --text-secondary: hsl(0deg 0% 30%);
+  --text-muted: hsl(235deg 9% 75%);
   --padding-gutter: 1rem;
   --navbar-height: 70px;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 body {
@@ -37,10 +30,11 @@ a {
 }
 
 button {
+  cursor: pointer;
   font-family: inherit;
 }
 
 img {
-  width: 100%;
   height: auto;
+  width: 100%;
 }
