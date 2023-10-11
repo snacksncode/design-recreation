@@ -21,42 +21,42 @@ const cards: ExperienceCard[] = [
 
 export const Experience = () => {
   return (
-    <Container className={styles.wrapper}>
-      <div className={styles.text}>
-        <h2 className={styles.title}>
+    <Container className={styles["wrapper"]}>
+      <div className={styles["content"]}>
+        <h2 className={styles["title"]}>
           The
           <br /> Zabdos
           <br /> Experience
         </h2>
-        <p className={styles.subtitle}>
+        <p className={styles["subtitle"]}>
           Whether it&apos;s your first flight or
           <br /> simply your latest, we work to
           <br /> anticipate your every need
         </p>
-        <div className={styles.action}>
-          <div className={styles.icon}>
-            <PlayCircle />
+        <div className={styles["action"]}>
+          <div className={styles["action__icon"]}>
+            <PlayCircle className={styles["action__icon-svg"]} />
           </div>
-          <span className={styles.text}>Watch the full video now!</span>
+          <span className={styles["action__text"]}>Watch the full video now!</span>
         </div>
       </div>
-      <div className={styles.cards}>
+      <div className={styles["cards"]}>
         {cards.map(({ caption, text, image }, index) => {
           const key = `${caption}_${text}`;
           return (
-            <div key={key} className={styles.card}>
-              <div className={styles["image-container"]}>
+            <div key={key} className={styles["card"]}>
+              <div className={styles["card__image-container"]}>
                 {index === cards.length - 1 && (
-                  <div className={styles["image-text"]}>
-                    <Cube />
+                  <div className={styles["card__image-text"]}>
+                    <Cube className={styles["card__image-svg"]} />
                     Explore the Zabdos A380 or Boeing 777 using our 3D experience.
                   </div>
                 )}
-                <Image className={styles.image} placeholder="blur" src={image} sizes="100vw" alt="" />
+                <Image className={styles["card__image"]} placeholder="blur" src={image} sizes="100vw" alt="" />
               </div>
-              <div className={styles.content}>
-                <p className={styles.caption}>{caption}</p>
-                <h3 className={styles.text}>{text}</h3>
+              <div className={styles["card__content"]}>
+                <p className={styles["card__caption"]}>{caption}</p>
+                <h3 className={styles["card__text"]}>{text}</h3>
               </div>
             </div>
           );
