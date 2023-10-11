@@ -1,10 +1,11 @@
-export const Airplane = () => {
+export const Airplane = ({ className }: { className: string }) => {
   return (
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       width="800px"
       height="800px"
+      className={className}
       viewBox="0 0 512 512"
       xmlSpace="preserve"
       fill="currentColor"

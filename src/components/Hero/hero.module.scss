@@ -37,7 +37,7 @@
   margin-bottom: 2rem;
   position: relative;
 
-  .text {
+  &__text {
     font-weight: 600;
     letter-spacing: 2px;
     position: relative;
@@ -68,16 +68,14 @@
   }
 }
 
-.heading-wrapper {
-  .heading {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-  }
+.heading {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
 
-  .slides {
-    display: none;
-  }
+.slides {
+  display: none;
 }
 
 .subheading {
@@ -86,7 +84,7 @@
   line-height: 1.7;
   margin-bottom: 1rem;
 
-  .space {
+  &__space {
     display: none;
   }
 }
@@ -124,7 +122,7 @@
   font-size: 0.9rem;
   font-weight: 700;
 
-  .text {
+  &__text {
     align-items: center;
     backdrop-filter: blur(10px);
     background-color: rgb(255 255 255 / 25%);
@@ -132,7 +130,7 @@
     padding: 0.5rem 1.75rem;
   }
 
-  .icon {
+  &__icon {
     align-items: center;
     background-color: var(--white);
     color: var(--clr-accent);
@@ -140,7 +138,7 @@
     isolation: isolate;
     padding: 0.75rem;
 
-    svg {
+    &-svg {
       height: 20px;
       width: 20px;
     }
@@ -161,36 +159,34 @@
     display: flex;
     flex: 1;
     padding: 2rem 1.5rem;
+  }
 
-    .showcase-row {
-      align-items: center;
-      display: flex;
-      flex: 1;
-      gap: 1rem;
-      justify-content: space-between;
+  &__row {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    justify-content: space-between;
+  }
 
-      .column {
-        .label {
-          color: var(--text-muted);
-          font-size: 0.75rem;
-          margin-bottom: 0.35rem;
-        }
+  &__label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
 
-        .select {
-          align-items: center;
-          color: var(--text-primary);
-          display: flex;
-          font-size: 1rem;
-          font-weight: 700;
-          gap: 0.5rem;
+  &__select {
+    align-items: center;
+    color: var(--text-primary);
+    display: flex;
+    font-size: 1rem;
+    font-weight: 700;
+    gap: 0.5rem;
+  }
 
-          svg {
-            height: 0.75rem;
-            width: 0.75rem;
-          }
-        }
-      }
-    }
+  &__caret {
+    height: 0.75rem;
+    width: 0.75rem;
   }
 
   &__action {
@@ -223,67 +219,69 @@
   .heading-wrapper {
     display: flex;
     justify-content: space-between;
+  }
 
-    .heading {
-      font-size: 7.5rem;
+  .heading {
+    font-size: 7.5rem;
+  }
+
+  .slides {
+    display: flex;
+    gap: 0.25rem;
+    z-index: 2;
+  }
+
+  .slide {
+    $self: &;
+
+    align-items: center;
+    align-self: flex-start;
+    backdrop-filter: blur(20px);
+    background-color: rgb(255 255 255 / 15%);
+    border: none;
+    border-top: 2px solid rgb(0 0 0 / 10%);
+    display: flex;
+    flex-direction: column;
+    padding-block: 1rem;
+    position: relative;
+    top: -2px;
+    width: 50px;
+
+    &__number {
+      color: rgb(0 0 0 / 10%);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-block: 1.5rem;
     }
 
-    .slides {
-      display: flex;
-      gap: 0.25rem;
-      z-index: 2;
+    &__indicator {
+      background-color: rgb(0 0 0 / 10%);
+      border-radius: 50%;
+      height: 5px;
+      width: 5px;
+    }
 
-      .slide {
-        align-items: center;
-        align-self: flex-start;
-        backdrop-filter: blur(20px);
-        background-color: rgb(255 255 255 / 15%);
-        border: none;
-        border-top: 2px solid rgb(0 0 0 / 10%);
-        display: flex;
-        flex-direction: column;
-        padding-block: 1rem;
-        position: relative;
+    &--active {
+      background-color: rgb(255 255 255 / 45%);
+      border-top: 2px solid #acb4e6;
+
+      &::before {
+        background-color: var(--clr-accent);
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
         top: -2px;
-        width: 50px;
+        width: 60%;
+      }
 
-        .number {
-          color: rgb(0 0 0 / 10%);
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin-block: 1.5rem;
-        }
+      #{$self}__number {
+        color: var(--text-primary);
+      }
 
-        .indicator {
-          background-color: rgb(0 0 0 / 10%);
-          border-radius: 50%;
-          height: 5px;
-          width: 5px;
-        }
-
-        &.active {
-          background-color: rgb(255 255 255 / 45%);
-          border-top: 2px solid #acb4e6;
-
-          &::before {
-            background-color: var(--clr-accent);
-            content: "";
-            height: 2px;
-            left: 0;
-            position: absolute;
-            top: -2px;
-            width: 60%;
-          }
-
-          .number {
-            color: var(--text-primary);
-          }
-
-          .indicator {
-            background-color: var(--clr-accent);
-            box-shadow: 0 3px 5px var(--clr-accent);
-          }
-        }
+      #{$self}__indicator {
+        background-color: var(--clr-accent);
+        box-shadow: 0 3px 5px var(--clr-accent);
       }
     }
   }
@@ -295,11 +293,11 @@
       display: none;
     }
 
-    .space {
+    &__space {
       display: inline;
     }
 
-    .rupee {
+    &__rupee {
       margin-right: -2px;
     }
   }
@@ -308,7 +306,7 @@
     font-size: 1rem;
     margin-bottom: 1rem;
 
-    .text {
+    &__text {
       font-weight: 700;
 
       &::before {
@@ -332,16 +330,16 @@
   .action {
     font-size: 1.25rem;
 
-    .text {
+    &__text {
       padding: 1.25rem 2.75rem;
     }
 
-    .icon {
-      padding: 1.25rem;
+    &__icon {
+      padding: 1rem;
 
-      svg {
-        height: 3.75rem;
-        width: 3.75rem;
+      &-svg {
+        height: 2rem;
+        width: 2rem;
       }
     }
   }
@@ -362,7 +360,7 @@
       justify-content: center;
       width: 125px;
 
-      svg {
+      &-svg {
         height: 45px;
         transform: rotate(45deg);
         width: 45px;
@@ -371,32 +369,26 @@
 
     &__airports {
       justify-content: center;
+    }
 
-      .showcase-row {
-        max-width: 500px;
+    &__row {
+      max-width: 500px;
+    }
 
-        .column {
-          .label {
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-          }
+    &__label {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
 
-          .select {
-            font-size: 1.125rem;
-            justify-content: space-between;
-            width: 175px;
+    &__caret {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
 
-            svg {
-              height: 1.5rem;
-              width: 1.5rem;
-
-              path {
-                stroke-width: 2;
-              }
-            }
-          }
-        }
-      }
+    &__select {
+      font-size: 1.125rem;
+      justify-content: space-between;
+      width: 175px;
     }
 
     &__action {
