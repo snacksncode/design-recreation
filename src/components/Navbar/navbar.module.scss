@@ -13,35 +13,35 @@
   display: flex;
   padding-block: 5px;
 
-  svg {
+  &__svg {
     height: 100%;
     width: auto;
   }
 }
 
 .nav {
-  .hamburger {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    height: 44px;
-    justify-content: space-between;
-    padding: 10px 5px;
-    width: 44px;
-
-    .line {
-      background-color: var(--white);
-      border-radius: 3px;
-      height: 3px;
-      width: 100%;
-    }
-  }
-
-  .status,
-  .check-in,
-  .avatar {
+  &__status,
+  &__check-in,
+  &__avatar {
     display: none;
+  }
+}
+
+.hamburger {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  height: 44px;
+  justify-content: space-between;
+  padding: 10px 5px;
+  width: 44px;
+
+  &__line {
+    background-color: var(--white);
+    border-radius: 3px;
+    height: 3px;
+    width: 100%;
   }
 }
 
@@ -62,14 +62,19 @@
     display: flex;
     gap: 2rem;
 
-    .status,
-    .check-in,
-    .avatar {
+    &__status,
+    &__check-in,
+    &__avatar {
       cursor: pointer;
       display: block;
     }
 
-    .avatar {
+    &__check-in,
+    &__status {
+      font-weight: 700;
+    }
+
+    &__avatar {
       backdrop-filter: blur(10px);
       background-color: rgb(0 0 0 / 20%);
       border: none;
@@ -85,7 +90,7 @@
       }
     }
 
-    .check-in {
+    &__check-in {
       background-color: var(--white);
       border: none;
       border-radius: 4px;
@@ -94,16 +99,11 @@
       padding: 0.5rem 2rem;
     }
 
-    .status {
+    &__status {
       background-color: transparent;
       border: none;
       color: var(--white);
       padding: 0.35rem;
-    }
-
-    .check-in,
-    .status {
-      font-weight: 700;
     }
   }
 }
