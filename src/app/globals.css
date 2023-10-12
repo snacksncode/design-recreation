@@ -1,10 +1,30 @@
 :root {
+  /* Colors */
   --clr-accent: hsl(236deg 79% 68%);
   --white: hsl(0deg 0% 100%);
   --off-white: hsl(84deg 45% 98%);
   --text-primary: hsl(0deg 0% 20%);
   --text-secondary: hsl(0deg 0% 30%);
   --text-muted: hsl(235deg 9% 75%);
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 4rem;
+  --font-size-6xl: 7.5rem;
+
+  /* Font Weights */
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  /* Misc */
   --padding-gutter: 1rem;
   --navbar-height: 70px;
 }

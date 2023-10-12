@@ -71,7 +71,7 @@
 
     &__check-in,
     &__status {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
     }
 
     &__avatar {
