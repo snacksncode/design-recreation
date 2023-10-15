@@ -1,0 +1,108 @@
+.wrapper {
+  color: var(--white);
+  display: flex;
+  height: var(--navbar-height);
+  justify-content: space-between;
+  padding: var(--spacing-5);
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  padding-block: var(--spacing-2);
+
+  &__svg {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.nav {
+  &__status,
+  &__check-in,
+  &__avatar {
+    display: none;
+  }
+}
+
+.hamburger {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  height: var(--spacing-11);
+  justify-content: space-between;
+  padding: var(--spacing-4) var(--spacing-2);
+  width: var(--spacing-11);
+
+  &__line {
+    background-color: var(--white);
+    border-radius: var(--spacing-2);
+    height: var(--spacing-2);
+    width: 100%;
+  }
+}
+
+@media (width >= 1200px) {
+  .wrapper {
+    left: 50%;
+    margin-top: var(--spacing-5);
+    max-width: 1300px;
+    transform: translateX(-50%);
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .nav {
+    align-items: center;
+    display: flex;
+    gap: var(--spacing-9);
+
+    &__status,
+    &__check-in,
+    &__avatar {
+      display: block;
+    }
+
+    &__check-in,
+    &__status {
+      font-weight: var(--font-weight-bold);
+    }
+
+    &__avatar {
+      backdrop-filter: blur(var(--spacing-4));
+      background-color: rgb(0 0 0 / 20%);
+      border: none;
+      border-radius: 50%;
+      height: var(--spacing-11);
+      overflow: hidden;
+      padding: var(--spacing-1);
+      width: var(--spacing-11);
+
+      img {
+        border-radius: inherit;
+        display: block;
+      }
+    }
+
+    &__check-in {
+      background-color: var(--white);
+      border: none;
+      border-radius: var(--spacing-2);
+      box-shadow: 0 var(--spacing-2) var(--spacing-4) rgb(0 0 0 / 15%);
+      color: var(--text-primary);
+      padding: var(--spacing-3) var(--spacing-9);
+    }
+
+    &__status {
+      background-color: transparent;
+      border: none;
+      color: var(--white);
+      padding: var(--spacing-2);
+    }
+  }
+}
