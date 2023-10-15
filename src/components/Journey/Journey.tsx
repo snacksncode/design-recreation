@@ -8,6 +8,7 @@ import { KitchenTools } from "@/components/svg/KitchenTools";
 import { Bolt } from "@/components/svg/Bolt";
 import { Car } from "@/components/svg/Car";
 import classNames from "classnames";
+import { SectionHeading } from "@/components/SectionHeading";
 
 type Service = {
   caption: string;
@@ -28,10 +29,11 @@ const services: ServiceEntry[] = [
 export const Journey = () => {
   return (
     <Container className={styles["wrapper"]}>
-      <h2 className={styles["title"]}>Complement Your Journey</h2>
-      <p className={styles["subtitle"]}>
-        Explore the additional services we offer to make your journey even more memorable
-      </p>
+      <SectionHeading
+        title="Complement Your Journey"
+        subtitle="Explore the additional services we offer to make your journey even more memorable"
+        centerPill
+      />
       <div className={styles["services"]}>
         {services.map(({ id, caption, Icon }, index) => {
           const classes = classNames(styles["service"], { [styles["service--active"]]: index === 0 });

@@ -1,9 +1,9 @@
 .main {
   margin-inline: auto;
-  max-width: 1200px;
+  max-width: var(--breakpoint-lg);
   width: 100%;
 
   &.gutters {
-    padding-inline: var(--padding-gutter);
+    padding-inline: var(--spacing-5);
   }
 }

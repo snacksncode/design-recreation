@@ -3,12 +3,12 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  padding-top: calc(var(--navbar-height) + 2.5rem);
+  padding-top: calc(var(--navbar-height) + var(--spacing-10));
   position: relative;
   width: 100%;
 
   &::before {
-    --size: 200px;
+    --size: var(--spacing-48);
 
     background-image: linear-gradient(to top, var(--off-white) 20%, transparent);
     bottom: 0;
@@ -34,20 +34,20 @@
 
 .caption {
   font-size: var(--font-size-xs);
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-9);
   position: relative;
 
   &__text {
     font-weight: var(--font-weight-semi-bold);
-    letter-spacing: 2px;
+    letter-spacing: var(--spacing-1);
     position: relative;
     text-transform: uppercase;
 
     &::before {
       background-color: var(--white);
-      bottom: -0.75em;
+      bottom: calc(var(--spacing-4) * -1);
       content: "";
-      height: 2px;
+      height: var(--spacing-1);
       left: 0;
       position: absolute;
       width: 100%;
@@ -56,14 +56,14 @@
   }
 
   &::before {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--spacing-4));
     background-color: rgb(255 255 255 / 30%);
-    bottom: -0.75em;
+    bottom: calc(var(--spacing-4) * -1);
     content: "";
-    height: 2px;
+    height: var(--spacing-1);
     left: 0;
     position: absolute;
-    width: calc(100% + var(--padding-gutter));
+    width: calc(100% + var(--spacing-5));
     z-index: 1;
   }
 }
@@ -71,7 +71,7 @@
 .heading {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-extra-bold);
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-5);
 }
 
 .slides {
@@ -82,10 +82,15 @@
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   line-height: 1.7;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-5);
 
   &__space {
     display: none;
+  }
+
+  &__rupee {
+    height: var(--spacing-5);
+    width: var(--spacing-5);
   }
 }
 
@@ -93,21 +98,21 @@
   display: flex;
   flex-direction: column;
   font-size: var(--font-size-base);
-  gap: 1rem;
+  gap: var(--spacing-5);
   justify-content: center;
-  margin-bottom: 2rem;
-  padding-block: 0.5rem;
-  padding-left: 1.5rem;
+  margin-bottom: var(--spacing-9);
+  padding-block: var(--spacing-3);
+  padding-left: var(--spacing-7);
   position: relative;
 
   &::before {
     background-color: var(--white);
-    border-radius: 4px;
+    border-radius: var(--spacing-2);
     content: "";
     height: 100%;
     left: 0;
     position: absolute;
-    width: 4px;
+    width: var(--spacing-2);
   }
 }
 
@@ -116,7 +121,7 @@
   align-self: flex-start;
   background-color: transparent;
   border: none;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 5%);
+  box-shadow: 0 var(--spacing-2) var(--spacing-4) rgb(0 0 0 / 5%);
   color: inherit;
   display: flex;
   font-size: var(--font-size-base);
@@ -124,10 +129,10 @@
 
   &__text {
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--spacing-4));
     background-color: rgb(255 255 255 / 25%);
     display: flex;
-    padding: 0.5rem 1.75rem;
+    padding: var(--spacing-3) var(--spacing-8);
   }
 
   &__icon {
@@ -135,12 +140,11 @@
     background-color: var(--white);
     color: var(--clr-accent);
     display: flex;
-    isolation: isolate;
-    padding: 0.75rem;
+    padding: var(--spacing-4);
 
     &-svg {
-      height: 20px;
-      width: 20px;
+      height: var(--spacing-6);
+      width: var(--spacing-6);
     }
   }
 }
@@ -148,7 +152,7 @@
 .showcase {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: var(--spacing-20);
 
   &__icon {
     display: none;
@@ -158,21 +162,21 @@
     background-color: var(--white);
     display: flex;
     flex: 1;
-    padding: 2rem 1.5rem;
+    padding: var(--spacing-9) var(--spacing-7);
   }
 
   &__row {
     align-items: center;
     display: flex;
     flex: 1;
-    gap: 1rem;
+    gap: var(--spacing-5);
     justify-content: space-between;
   }
 
   &__label {
     color: var(--text-muted);
     font-size: var(--font-size-xs);
-    margin-bottom: 0.35rem;
+    margin-bottom: var(--spacing-2);
   }
 
   &__select {
@@ -181,12 +185,12 @@
     display: flex;
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-bold);
-    gap: 0.5rem;
+    gap: var(--spacing-3);
   }
 
   &__caret {
-    height: 0.75rem;
-    width: 0.75rem;
+    height: var(--spacing-4);
+    width: var(--spacing-4);
   }
 
   &__action {
@@ -194,15 +198,15 @@
     border: none;
     color: var(--white);
     font-weight: var(--font-weight-bold);
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-bottom: var(--spacing-9);
+    margin-top: var(--spacing-5);
+    padding: var(--spacing-5);
   }
 }
 
 @media (width >= 1200px) {
   .wrapper {
-    padding-top: calc(var(--navbar-height) + 8rem);
+    padding-top: calc(var(--navbar-height) + var(--spacing-32));
 
     &::before {
       --size: 600px;
@@ -227,7 +231,7 @@
 
   .slides {
     display: flex;
-    gap: 0.25rem;
+    gap: var(--spacing-2);
     z-index: 2;
   }
 
@@ -236,42 +240,42 @@
 
     align-items: center;
     align-self: flex-start;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(var(--spacing-6));
     background-color: rgb(255 255 255 / 15%);
     border: none;
-    border-top: 2px solid rgb(0 0 0 / 10%);
+    border-top: var(--spacing-1) solid rgb(0 0 0 / 10%);
     display: flex;
     flex-direction: column;
-    padding-block: 1rem;
+    padding-block: var(--spacing-5);
     position: relative;
-    top: -2px;
-    width: 50px;
+    top: calc(var(--spacing-1) * -1);
+    width: var(--spacing-12);
 
     &__number {
       color: rgb(0 0 0 / 10%);
       font-size: var(--font-size-xl);
       font-weight: var(--font-weight-bold);
-      margin-block: 1.5rem;
+      margin-block: var(--spacing-7);
     }
 
     &__indicator {
       background-color: rgb(0 0 0 / 10%);
       border-radius: 50%;
-      height: 5px;
-      width: 5px;
+      height: var(--spacing-2);
+      width: var(--spacing-2);
     }
 
     &--active {
       background-color: rgb(255 255 255 / 45%);
-      border-top: 2px solid #acb4e6;
+      border-top: var(--spacing-1) solid #acb4e6;
 
       &::before {
         background-color: var(--clr-accent);
         content: "";
-        height: 2px;
+        height: var(--spacing-1);
         left: 0;
         position: absolute;
-        top: -2px;
+        top: calc(var(--spacing-1) * -1);
         width: 60%;
       }
 
@@ -281,7 +285,7 @@
 
       #{$self}__indicator {
         background-color: var(--clr-accent);
-        box-shadow: 0 3px 5px var(--clr-accent);
+        box-shadow: 0 var(--spacing-1) var(--spacing-2) var(--clr-accent);
       }
     }
   }
@@ -298,72 +302,74 @@
     }
 
     &__rupee {
-      margin-right: -2px;
+      height: var(--spacing-7);
+      margin-right: calc(var(--spacing-1) * -1);
+      width: var(--spacing-7);
     }
   }
 
   .caption {
     font-size: var(--font-size-base);
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-5);
 
     &__text {
       font-weight: var(--font-weight-bold);
 
       &::before {
-        bottom: -1rem;
+        bottom: calc(var(--spacing-5) * -1);
       }
     }
 
     &::before {
-      bottom: -1rem;
+      bottom: calc(var(--spacing-5) * -1);
       width: 100%;
     }
   }
 
   .info {
     font-size: var(--font-size-xl);
-    margin-bottom: 4rem;
-    margin-top: 1rem;
-    padding-block: 0.25rem;
+    margin-bottom: var(--spacing-16);
+    margin-top: var(--spacing-5);
+    padding-block: var(--spacing-2);
   }
 
   .action {
     font-size: var(--font-size-xl);
 
     &__text {
-      padding: 1.25rem 2.75rem;
+      padding: var(--spacing-6) var(--spacing-11);
     }
 
     &__icon {
-      padding: 1rem;
+      padding: var(--spacing-5);
 
       &-svg {
-        height: 2rem;
-        width: 2rem;
+        height: var(--spacing-9);
+        width: var(--spacing-9);
       }
     }
   }
 
   .showcase {
-    box-shadow: 0 10px 45px rgb(0 0 0 / 10%);
+    box-shadow: 0 var(--spacing-4) var(--spacing-11) rgb(0 0 0 / 10%);
     flex-direction: row;
-    margin-bottom: 10rem;
-    margin-top: 12rem;
+    margin-bottom: var(--spacing-40);
+    margin-top: var(--spacing-48);
     width: 100%;
 
     &__icon {
       align-items: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(var(--spacing-4));
       background-color: rgb(255 255 255 / 35%);
       color: var(--text-muted);
       display: flex;
       justify-content: center;
-      width: 125px;
+      width: var(--spacing-32);
 
       &-svg {
-        height: 45px;
+        height: var(--spacing-11);
         transform: rotate(45deg);
-        width: 45px;
+        width: var(--spacing-11);
       }
     }
 
@@ -377,24 +383,24 @@
 
     &__label {
       font-size: var(--font-size-sm);
-      margin-bottom: 1rem;
+      margin-bottom: var(--spacing-5);
     }
 
     &__caret {
-      height: 1.5rem;
-      width: 1.5rem;
+      height: var(--spacing-7);
+      width: var(--spacing-7);
     }
 
     &__select {
       font-size: var(--font-size-lg);
       justify-content: space-between;
-      width: 175px;
+      width: var(--spacing-48);
     }
 
     &__action {
       font-size: var(--font-size-2xl);
       margin: 0;
-      padding: 3rem 6rem;
+      padding: var(--spacing-12) var(--spacing-24);
     }
   }
 }

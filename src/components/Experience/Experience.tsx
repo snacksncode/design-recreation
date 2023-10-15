@@ -6,6 +6,7 @@ import smile from "@/public/ris-failed-me.jpeg";
 import vr from "@/public/he-do-be-gaming.jpg";
 import Image, { StaticImageData } from "next/image";
 import { Cube } from "@/components/svg/Cube";
+import { SectionHeading } from "@/components/SectionHeading";
 
 type ExperienceCard = {
   caption: string;
@@ -23,16 +24,22 @@ export const Experience = () => {
   return (
     <Container className={styles["wrapper"]}>
       <div className={styles["content"]}>
-        <h2 className={styles["title"]}>
-          The
-          <br /> Zabdos
-          <br /> Experience
-        </h2>
-        <p className={styles["subtitle"]}>
-          Whether it&apos;s your first flight or
-          <br /> simply your latest, we work to
-          <br /> anticipate your every need
-        </p>
+        <SectionHeading
+          title={
+            <>
+              The
+              <br /> Zabdos
+              <br /> Experience
+            </>
+          }
+          subtitle={
+            <>
+              Whether it&apos;s your first flight or
+              <br /> simply your latest, we work to
+              <br /> anticipate your every need
+            </>
+          }
+        />
         <div className={styles["action"]}>
           <div className={styles["action__icon"]}>
             <PlayCircle className={styles["action__icon-svg"]} />

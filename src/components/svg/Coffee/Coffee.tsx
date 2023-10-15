@@ -3,7 +3,6 @@ export const Coffee = ({ className }: { className: string }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      // style={{ transform: "translateX(2px)" }}
       width="24"
       height="24"
       viewBox="0 0 20 24"

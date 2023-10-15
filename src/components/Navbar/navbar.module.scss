@@ -3,7 +3,7 @@
   display: flex;
   height: var(--navbar-height);
   justify-content: space-between;
-  padding: var(--padding-gutter);
+  padding: var(--spacing-5);
   position: absolute;
   width: 100%;
   z-index: 2;
@@ -11,7 +11,7 @@
 
 .logo {
   display: flex;
-  padding-block: 5px;
+  padding-block: var(--spacing-2);
 
   &__svg {
     height: 100%;
@@ -32,15 +32,15 @@
   border: none;
   display: flex;
   flex-direction: column;
-  height: 44px;
+  height: var(--spacing-11);
   justify-content: space-between;
-  padding: 10px 5px;
-  width: 44px;
+  padding: var(--spacing-4) var(--spacing-2);
+  width: var(--spacing-11);
 
   &__line {
     background-color: var(--white);
-    border-radius: 3px;
-    height: 3px;
+    border-radius: var(--spacing-2);
+    height: var(--spacing-2);
     width: 100%;
   }
 }
@@ -48,7 +48,7 @@
 @media (width >= 1200px) {
   .wrapper {
     left: 50%;
-    margin-top: 1rem;
+    margin-top: var(--spacing-5);
     max-width: 1300px;
     transform: translateX(-50%);
   }
@@ -60,12 +60,11 @@
   .nav {
     align-items: center;
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-9);
 
     &__status,
     &__check-in,
     &__avatar {
-      cursor: pointer;
       display: block;
     }
 
@@ -75,14 +74,14 @@
     }
 
     &__avatar {
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(var(--spacing-4));
       background-color: rgb(0 0 0 / 20%);
       border: none;
       border-radius: 50%;
-      height: 44px;
+      height: var(--spacing-11);
       overflow: hidden;
-      padding: 2px;
-      width: 44px;
+      padding: var(--spacing-1);
+      width: var(--spacing-11);
 
       img {
         border-radius: inherit;
@@ -93,17 +92,17 @@
     &__check-in {
       background-color: var(--white);
       border: none;
-      border-radius: 4px;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+      border-radius: var(--spacing-2);
+      box-shadow: 0 var(--spacing-2) var(--spacing-4) rgb(0 0 0 / 15%);
       color: var(--text-primary);
-      padding: 0.5rem 2rem;
+      padding: var(--spacing-3) var(--spacing-9);
     }
 
     &__status {
       background-color: transparent;
       border: none;
       color: var(--white);
-      padding: 0.35rem;
+      padding: var(--spacing-2);
     }
   }
 }

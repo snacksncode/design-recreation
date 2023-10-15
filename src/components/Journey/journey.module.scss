@@ -1,54 +1,30 @@
 .wrapper {
   background-color: var(--off-white);
-  padding-block: 2rem 4rem;
+  padding-block: var(--spacing-9) var(--spacing-16);
   text-align: center;
-}
-
-.title {
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  padding-top: 2rem;
-
-  &::before {
-    background-color: var(--clr-accent);
-    border-radius: 6px;
-    content: "";
-    display: block;
-    height: 6px;
-    margin-inline: auto;
-    position: relative;
-    top: -1.5rem;
-    width: 60px;
-  }
-}
-
-.subtitle {
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 3rem;
 }
 
 .services {
   display: grid;
-  gap: 3rem 2rem;
+  gap: var(--spacing-12) var(--spacing-9);
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  margin-bottom: 5rem;
+  margin-top: var(--spacing-12);
 }
 
 .service {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-5);
 
   &__icon {
     align-self: center;
     background-color: var(--white);
     border-radius: 50%;
-    box-shadow: 4px 15px 25px hsla(0deg 0% 0% / 10%);
+    box-shadow: var(--spacing-2) var(--spacing-5) var(--spacing-7) hsla(0deg 0% 0% / 10%);
     color: var(--clr-accent);
     display: flex;
-    padding: 1.25rem;
+    padding: var(--spacing-6);
   }
 
   &__ripples {
@@ -56,8 +32,8 @@
   }
 
   &__svg {
-    height: 2.125rem;
-    width: 2.125rem;
+    height: var(--spacing-9);
+    width: var(--spacing-9);
   }
 
   &__caption {
@@ -67,40 +43,22 @@
 }
 
 @media (width >= 1200px) {
-  .title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-extra-bold);
-    line-height: 1.3;
-    margin-bottom: 2rem;
-    padding-top: 4.5rem;
-
-    &::before {
-      height: 10px;
-      top: -3rem;
-    }
-  }
-
-  .subtitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: 7.5rem;
-    margin-inline: auto;
-    max-width: 45ch;
-  }
-
   .services {
-    gap: 6rem 3rem;
+    gap: var(--spacing-24) var(--spacing-12);
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    margin-bottom: var(--spacing-20);
+    margin-top: var(--spacing-32);
   }
 
   .service {
     $self: &;
 
-    gap: 1.75rem;
+    gap: var(--spacing-8);
     isolation: isolate;
 
     &__icon {
-      padding: 2rem;
+      padding: var(--spacing-9);
       position: relative;
     }
 
@@ -110,26 +68,27 @@
     }
 
     &__svg {
-      height: 40px;
-      width: 40px;
+      height: var(--spacing-10);
+      width: var(--spacing-10);
     }
 
     &__caption {
       font-size: var(--font-size-lg);
+      position: relative;
       z-index: 1;
     }
 
     &--active {
       #{$self}__icon {
         background-color: var(--clr-accent);
-        box-shadow: 8px 20px 25px hsl(236deg 79% 68% / 35%);
+        box-shadow: var(--spacing-3) var(--spacing-6) var(--spacing-7) hsl(236deg 79% 68% / 35%);
         color: var(--white);
       }
 
       #{$self}__ripples {
-        border: 3px solid var(--white);
+        border: var(--spacing-2) solid var(--white);
         border-radius: inherit;
-        inset: -1rem;
+        inset: calc(var(--spacing-5) * -1);
 
         &::before,
         &::after {
@@ -139,13 +98,13 @@
         }
 
         &::before {
-          border: 3px solid var(--white);
-          inset: -2.5rem;
+          border: var(--spacing-2) solid var(--white);
+          inset: calc(var(--spacing-10) * -1);
         }
 
         &::after {
-          border: 3px solid var(--white);
-          inset: -6.5rem;
+          border: var(--spacing-2) solid var(--white);
+          inset: calc(var(--spacing-24) * -1);
         }
       }
     }
